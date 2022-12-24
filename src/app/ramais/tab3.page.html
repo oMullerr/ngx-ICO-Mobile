@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ramais
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Ramais</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="top-grip">
+    <div class="ramal-search">
+      <ion-item>
+        <ion-label position="stacked">Pesquisa avançada</ion-label>
+        <ion-input [clearInput]="true" placeholder="Digite a área desejada"></ion-input>
+      </ion-item>
+    </div>
+
+    <div class="ramal-button">
+      <ion-button shape="round">Adicionar novo ramal</ion-button>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div *ngFor="let ramal of ramais">
+      <ion-card class="ramal-card">
+        <ion-card-header>
+          <ion-card-title>
+            <li>
+              {{ramal.nome}}
+            </li>
+          </ion-card-title>
+          <ion-card-subtitle class="ramal-subtitle">
+            <!-- {{ramal.descricao}} -->
+          </ion-card-subtitle>
+          <br>
+        </ion-card-header>
+        <ion-card-content class="ramal-content">
+          Contato: {{ramal.ramal}}
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
